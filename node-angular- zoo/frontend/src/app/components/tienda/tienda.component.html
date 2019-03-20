@@ -1,0 +1,62 @@
+<div class="col-lg-12" [@fadeIn]>
+
+  <a class="boton_activo btn btn-success" [@marcar]="state" (click)="changeState()">
+    <span *ngIf="state == 'inactive'"> Botón inactivo</span>
+    <span *ngIf="state == 'active'"> Botón activo</span>
+  </a>
+  
+  <hr>
+  <h4>Animaciones css3</h4>
+  <a class="boton_transiciones">Transiciones</a>
+  <div class="clearfix"></div>
+  
+  <div class="caja_animada"></div>
+  
+  <hr>
+  <h4>Utilizar Jquery dentro de Angular</h4>
+  <button id="botonjq">Mostrar texto</button>
+  <p id="textojq" class="alert alert-warning">
+    Disfruta de los animales del Zoologico
+  </p>
+  
+  <div id="caja" style="border: 1px solid black; width: 150px; height: 50px;">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque aliquid ipsum aut modi assumenda consequatur quas enim vitae quae velit perferendis id nisi facilis natus nostrum, eveniet fugit doloremque voluptatibus?
+    </div>
+    
+    <editor [(ngModel)]="nombreDelParque" apiKey="test" [init]="{plugins: 'link'}"></editor>
+    
+    
+    <hr>
+    Padre:
+    <h1> {{titulo}} </h1>
+    <ul>
+      <li>Camiseta rosa</li>
+      <li>Gorra negra</li>
+    </ul>
+    
+    <hr>
+    
+    <p>
+      Nombre Del parque:
+      <input type="text" name="nombreDelParque" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()">
+    </p>
+    <p>
+      Resultado: {{nombreDelParque}}
+    </p>
+    
+    <div *ngIf="miParque">
+      <h4>Datos de mi parque desde el hijo</h4>
+      <ol>
+        <li>{{miParque.nombre}}</li>
+        <li>{{miParque.metros}}</li>
+        <li>{{miParque.vegetacion}}</li>
+        <li>{{miParque.abierto}}</li>
+      </ol>
+    </div>
+    
+    <br>
+    <p *ngIf="nombreDelParque">
+      Hijo:
+      <parques [nombre]="nombreDelParque" [metros_cuadrados]="888" (pasameLosDatos)="verDatosParque($event)"></parques>
+    </p>
+  </div>
