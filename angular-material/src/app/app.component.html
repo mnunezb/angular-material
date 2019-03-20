@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  Angular material
+</mat-toolbar>
+
+<main>
+  <mat-card>
+    <form action="">
+        <img
+        width="120"
+        alt="Angular Logo"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+      />
+      <mat-form-field>
+        <input matInput type="text" placeholder="title" #title/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Album Id" >
+        <mat-option *ngFor = "let id of albumsId" value="id" >
+          {{id}}
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="URL" #url>
+      </mat-form-field>
+      <button mat-button mat-flat-button color="primary" style="display: block; width: 100%">
+        save
+      </button>
+    </form>
+  </mat-card>
+  <app-photos></app-photos>
+</main>
+
+<router-outlet></router-outlet>
